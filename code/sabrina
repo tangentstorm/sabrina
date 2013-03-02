@@ -1,0 +1,37 @@
+#!/usr/bin/perl -w
+#----------------------------------------------------------
+#                                              SABRINA v.11
+#----------------------------------------------------------
+
+print "\n";
+print "sabrina ", $VERSION="v.11", "\n";
+print <<END;
+
+This program is copyright (c)1998 manifestation.com and is
+available for use under the terms of the MIT/x11 License.
+
+END
+
+
+if ((join " ", @ARGV) =~ /-i/) {
+
+    # sabrina -i uses IRC mode
+    
+    use ChatBot::ShopBot::IRCBot;
+    $sabrina = new ChatBot::ShopBot::IRCBot "sabrina $VERSION";
+    print "using irc mode.\n";
+    
+} else {
+
+    # otherwise, just use STDIO
+
+    use ChatBot::ShopBot;
+    $sabrina = new ChatBot::ShopBot "sabrina $VERSION" ;
+    print "using standard mode.\n";
+}
+
+print "\n";
+
+$sabrina->run;
+
+__END__
