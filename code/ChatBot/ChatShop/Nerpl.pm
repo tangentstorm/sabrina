@@ -5,7 +5,7 @@ use GVM;
 use GVM::Program;
 
 $vm = new GVM;
-$vm->load( new GVM::Program "../chocolate.nc" );
+$vm->load( new GVM::Program "../nerpl/chocolate.nc" );
 
 sub strat_Nerpl
 {
