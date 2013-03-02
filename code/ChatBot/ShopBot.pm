@@ -64,9 +64,9 @@ sub hear {
     # eventually, this will happen for each strategy
     # available to the bot.   
 
-    push @chatstack, Nerpl::strat_Nerpl($message);
+#    push @chatstack, Nerpl::strat_Nerpl($message);
 #    push @chatstack, MetaModel::strat_MetaModel($message);
-#    push @chatstack, ValueHierarchy::strat_ValueHierarchy($message);
+    push @chatstack, ValueHierarchy::strat_ValueHierarchy($message);
 
 
     # say one of them
